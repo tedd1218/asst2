@@ -1,0 +1,3 @@
+add_executable(camerapipe CameraPipeline.cpp CameraSensor_Dist.cpp)
+
+target_link_libraries(camerapipe CoreLib_Basic CoreLib_Imaging CoreLib_Graphics)

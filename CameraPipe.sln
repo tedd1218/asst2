@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30324.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CoreLib", "CoreLib\CoreLib.vcxproj", "{F9BE7957-8399-899E-0C49-E714FDDD4B65}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CameraPipeline", "CameraPipeline\CameraPipeline.vcxproj", "{DB525048-9A39-40F2-8343-6DEE659D0281}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|ARM = Release|ARM
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9BE7957-8399-899E-0C49-E714FDDD4B65}.Debug|ARM.ActiveCfg = Debug|ARM
+		{F9BE7957-8399-899E-0C49-E714FDDD4B65}.Debug|ARM.Build.0 = Debug|ARM
+		{F9BE7957-8399-899E-0C49-E714FDDD4B65}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F9BE7957-8399-899E-0C49-E714FDDD4B65}.Debug|Win32.Build.0 = Debug|Win32
+		{F9BE7957-8399-899E-0C49-E714FDDD4B65}.Debug|x64.ActiveCfg = Debug|x64
+		{F9BE7957-8399-899E-0C49-E714FDDD4B65}.Debug|x64.Build.0 = Debug|x64
+		{F9BE7957-8399-899E-0C49-E714FDDD4B65}.Release|ARM.ActiveCfg = Release|ARM
+		{F9BE7957-8399-899E-0C49-E714FDDD4B65}.Release|ARM.Build.0 = Release|ARM
+		{F9BE7957-8399-899E-0C49-E714FDDD4B65}.Release|Win32.ActiveCfg = Release|Win32
+		{F9BE7957-8399-899E-0C49-E714FDDD4B65}.Release|Win32.Build.0 = Release|Win32
+		{F9BE7957-8399-899E-0C49-E714FDDD4B65}.Release|x64.ActiveCfg = Release|x64
+		{F9BE7957-8399-899E-0C49-E714FDDD4B65}.Release|x64.Build.0 = Release|x64
+		{DB525048-9A39-40F2-8343-6DEE659D0281}.Debug|ARM.ActiveCfg = Debug|Win32
+		{DB525048-9A39-40F2-8343-6DEE659D0281}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DB525048-9A39-40F2-8343-6DEE659D0281}.Debug|Win32.Build.0 = Debug|Win32
+		{DB525048-9A39-40F2-8343-6DEE659D0281}.Debug|x64.ActiveCfg = Debug|Win32
+		{DB525048-9A39-40F2-8343-6DEE659D0281}.Release|ARM.ActiveCfg = Release|Win32
+		{DB525048-9A39-40F2-8343-6DEE659D0281}.Release|Win32.ActiveCfg = Release|Win32
+		{DB525048-9A39-40F2-8343-6DEE659D0281}.Release|Win32.Build.0 = Release|Win32
+		{DB525048-9A39-40F2-8343-6DEE659D0281}.Release|x64.ActiveCfg = Release|Win32
+		{1EA1EEC4-6B1A-49B9-8E10-70858969CDAE}.Debug|ARM.ActiveCfg = Debug|Win32
+		{1EA1EEC4-6B1A-49B9-8E10-70858969CDAE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1EA1EEC4-6B1A-49B9-8E10-70858969CDAE}.Debug|Win32.Build.0 = Debug|Win32
+		{1EA1EEC4-6B1A-49B9-8E10-70858969CDAE}.Debug|x64.ActiveCfg = Debug|Win32
+		{1EA1EEC4-6B1A-49B9-8E10-70858969CDAE}.Release|ARM.ActiveCfg = Release|Win32
+		{1EA1EEC4-6B1A-49B9-8E10-70858969CDAE}.Release|Win32.ActiveCfg = Release|Win32
+		{1EA1EEC4-6B1A-49B9-8E10-70858969CDAE}.Release|Win32.Build.0 = Release|Win32
+		{1EA1EEC4-6B1A-49B9-8E10-70858969CDAE}.Release|x64.ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
