@@ -5,6 +5,8 @@ In this assignment you will implement a simple image processing pipeline for the
 #### A2.0 Due Date: Feb 23rd
 #### A2.5 Due Date: Mar 2nd
 
+[Link](http://graphics.cs.cmu.edu/courses/15469/s22/assets/lectures/VCS_Recitation_02.pdf) to recitation slides.
+
 ## Getting Started
 
 Grab the renderer starter code above. Due to use of C++11, building the code on Linux requires G++ 4.8. All Gates cluster machines had been updated to have it, but we recommend you work on the Gates 3000 machines, ghc28-49.ghc.andrew.cmu.edu.
