@@ -2,9 +2,6 @@
 
 In this assignment you will implement a simple image processing pipeline for the data produced by the image sensor of the much-anticipated kPhone 469s. The 469s has a camera, and your job is to process the data coming off the kPhone 469s's sensor to produce the highest quality image you can. In addition to implementing basic image processing of sensor outputs, you are also be responsible for controlling the focus of the camera.
 
-#### A2.0 Due Date: Oct 5th
-#### A2.5 Due Date: Oct 13th
-
 [Link](http://graphics.cs.cmu.edu/courses/15469/s22/assets/lectures/VCS_Recitation_02.pdf) to recitation slides.
 
 ## Getting Started
