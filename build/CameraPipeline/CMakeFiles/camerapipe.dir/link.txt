@@ -1,0 +1,1 @@
+/usr/bin/c++ -std=c++0x  -ftest-coverage -msse4.1 -O3 -DNDEBUG -rdynamic CMakeFiles/camerapipe.dir/CameraPipeline.o CMakeFiles/camerapipe.dir/CameraSensor_Dist.o -o ../bin/camerapipe  ../lib/libCoreLib_Basic.a ../lib/libCoreLib_Imaging.a ../lib/libCoreLib_Graphics.a ../lib/libCoreLib_Basic.a 
