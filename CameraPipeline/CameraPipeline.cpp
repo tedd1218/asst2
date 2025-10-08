@@ -151,7 +151,82 @@ private:
 
     void AutoFocus()
     {
-        sensor->SetFocus(initialFocus);
+        // sensor->SetFocus(initialFocus);
+        const int focusMin = 450, focusMax = 500000;
+        int width = sensor->GetImageWidth(), height = sensor->GetImageHeight();
+
+        auto FocusScore = [&](int focusVal) -> double {
+            sensor->SetFocus(focusVal);
+
+            int cropW = Math::Clamp(width / 8, 32, 128);
+            int cropH = Math::Clamp(height / 8, 32, 128);
+            int cropX = (width - cropW) / 2;
+            int cropY = (height - cropH) / 2;
+
+            List<unsigned char> patch;
+            patch.SetSize(cropW * cropH);
+            sensor->ReadSensorData(patch.Buffer(), cropX, cropY, cropW, cropH);
+
+            double total = 0; int count = 0;
+            for (int y = 1; y < cropH - 1; y++)
+                for (int x = 1; x < cropW - 1; x++)
+                    if (GetBayerColor(cropX + x, cropY + y) == GREEN) {
+                        int center = patch[y*cropW + x];
+                        int lap = 4 * center - patch[(y-1)*cropW + x] - patch[(y+1)*cropW + x]
+                                            - patch[y*cropW + x-1] - patch[y*cropW + x+1];
+                        total += std::abs(lap);
+                        count++;
+                    }
+            return count ? total / count : 0.0;
+        };
+
+        int focusNow = Math::Clamp(initialFocus, focusMin, focusMax);
+        double bestScore = FocusScore(focusNow);
+        int step = 5000;
+
+        double rightScore = FocusScore(focusNow + step);
+        double leftScore  = FocusScore(focusNow - step);
+
+        int direction = 0;
+        if (rightScore > bestScore) {
+            direction = +1;
+            bestScore = rightScore;
+        } 
+        else if (leftScore > bestScore) {
+            direction = -1;
+            bestScore = leftScore;
+        }
+
+        while (direction != 0) {
+            int nextFocus = Math::Clamp(focusNow + direction * step, focusMin, focusMax);
+            double nextScore = FocusScore(nextFocus);
+            if (nextScore > bestScore) {
+                focusNow = nextFocus;
+                bestScore = nextScore;
+                step = std::min(step * 2, 100000);
+            } else break;
+        }
+
+        int low = std::max(focusMin, focusNow - step);
+        int high = std::min(focusMax, focusNow + step);
+        for (int i = 0; i < 8 && low < high; i++) {
+            int mid1 = low + (high - low) / 3;
+            int mid2 = high - (high - low) / 3;
+            double score1 = FocusScore(mid1);
+            double score2 = FocusScore(mid2);
+            if (score1 < score2) { 
+                low = mid1; 
+                focusNow = mid2; 
+                bestScore = score2; 
+            }
+            else { 
+                high = mid2; 
+                focusNow = mid1; 
+                bestScore = score1; 
+            }
+        }
+
+        sensor->SetFocus(focusNow);
     }
 
     void ProcessShot(Image & result, unsigned char * inputBuffer, int w, int h)
